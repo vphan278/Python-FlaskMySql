@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Ninja</title>
+    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">-->
+
+    <style>
+        .container{
+            background-color: beige;
+            width: 400px;
+            height: 400px;
+            text-align: center;
+            margin: auto;
+        }
+        form{
+        margin: 20px auto;
+        width: 350px;
+        
+    }
+    input{
+        padding: 5px;
+        font-size: inherit;
+    }
+    input[type="text"]{
+        display: block;
+        margin-bottom: 20px;
+        width: 340px;
+    }
+    .link{
+        text-align: center;
+    }
+
+    form{
+        text-align: left;
+    }
+    #submit{
+        background-color: aqua;
+    
+    }
+    .link{
+        text-align: left;
+        margin-left: 20px;
+    }
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="row flex">
+            <h1>New Ninja</h1>
+            <form  action="/new_ninja" method="post">
+                <div>
+                    <label class="me-5" for="dojo">Dojo:</label>
+                    <select title="Select A Dojo" name="dojo_id" id="dojo">
+                        {% for one_dojo in dojos %}
+                        <option value="{{ one_dojo.id }}"> {{ one_dojo.name }} </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div>
+                    <label class="" for="first_name">First Name:</label>
+                    <input class="" id="first_name" type="text" name="first_name">
+                </div>
+                <div>
+                    <label class="" for="last_name">Last Name:</label>
+                    <input class="" id="last_name" type="text" name="last_name">
+                </div>
+                <div>
+                    <label class="" for="age">Age:</label>
+                    <input class="" id="age" type="text" name="age">
+                </div>
+                <input class="" type="submit" value="Create"></input>
+            </form>
+            <a  href="/">Home</a>
+        </div>
+    </div>
+</body>
+</html>

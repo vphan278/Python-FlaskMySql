@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table{
+            width:500px;
+    
+        }
+
+        caption,th{
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        table, th, td{
+            border:1px solid black;
+            border-collapse: collapse;
+            padding:10px ;
+    
+        }
+
+        th{
+            background-color: lightblue;
+            width: 170px;
+        }
+        td p{
+            width: 170px;
+        }
+        tr:nth-child(even){
+            background-color: white;
+        }
+        tr:nth-child(odd){
+            background-color: #ddd;
+        }
+        
+        .id {
+            background-color: aqua;
+            width: 20px;
+    
+        }
+
+        form{
+            margin: 20px auto;
+            width: 340px;
+        }
+        input{
+            padding: 5px;
+            font-size: inherit;
+        }
+        input[type="text"]{
+            display: block;
+            margin-bottom: 20px;
+            width: 340px;
+        }
+        h1{
+            text-align: center;
+        }
+        .link{
+            text-align: center;
+        }
+    
+
+    </style>
+
+</head>
+<body>
+    
+
+    <h1>Add a Player/Friend</h1>
+    <form action="/create_friend" method="POST">
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname">
+        <label for="lname">Last Name:</label>
+        <input type="text" name="lname">
+        <label for="occ" >Occupation:</label>
+        <input type="text" name="occ">
+        <input type="submit" value="Add Friend">
+    </form> 
+    <br>
+    <hr>
+
+    
+
+    <div class="link">
+        <a href="/show" class="btn btn-primary"> Database page</a>
+    </div>
+        
+
+</body>
+</html>

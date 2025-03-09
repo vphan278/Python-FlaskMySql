@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+
+<body>
+    
+    <h1>Edit Friend</h1>
+
+    
+    <form action="/friends/{{friend.id}}/edit" method="POST">
+
+        <input type="hidden" name="id" value="{{friend.id}}">
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" value="{{friend.first_name}}">
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" value="{{friend.last_name}}">
+
+        <label for="occupation" >Occupation:</label>
+        <input type="text" name="occupation" value="{{friend.occupation}}">
+
+        <input type="hidden" name="updated_at" value="{{date}}">
+        <input type="submit" value="Edit Friend">
+    </form> 
+    <br>
+    <a href="/" class="btn btn-primary"> Back to Home page</a>
+    <a href="//friends/{{friend.id}}/show" class="btn btn-primary"> Show User</a>
+    
+
+    
+
+</body>
+</html>

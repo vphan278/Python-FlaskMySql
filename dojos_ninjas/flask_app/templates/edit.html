@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<body>
+
+    <h1>Hello Edit Ninja</h1>
+
+    <form action="/ninjas/{{ninja.id}}/edit" method="POST">
+
+        <input type="hidden" name="id" value="{{ninja.id}}">
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" value="{{ninja.first_name}}">
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" value="{{ninja.last_name}}">
+
+        <label for="age" >Age:</label>
+        <input type="text" name="age" value="{{ninja.age}}">
+
+        <input type="hidden" name="updated_at" value="{{date}}">
+        <input type="submit" value="Edit Friend">
+    </form> 
+    <br>
+    <a href="/" class="btn btn-primary"> Back to Home page</a>
+
+
+</body>
+</html>

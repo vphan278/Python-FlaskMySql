@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask</title>
+
+    <style>
+    table{
+            width:100%;
+    
+        }
+
+        caption,th{
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        table, th, td{
+            border:1px solid black;
+            border-collapse: collapse;
+            padding:10px ;
+    
+        }
+
+        th{
+            background-color: lightblue;
+            width: 170px;
+        }
+        td p{
+            width: 170px;
+        }
+        tr:nth-child(even){
+            background-color: white;
+        }
+        tr:nth-child(odd){
+            background-color: #ddd;
+        }
+        
+        .id {
+            background-color: aqua;
+            width: 20px;
+    
+        }
+        
+        form{
+            margin: 20px auto;
+            width: 340px;
+        }
+        input{
+            padding: 5px;
+            font-size: inherit;
+        }
+        input[type="text"]{
+            display: block;
+            margin-bottom: 20px;
+            width: 340px;
+        }
+        .h1{
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <H1 class="h1">Add a Friend</H1>
+
+    <form action="/create_friend" method="post">
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname" id="">
+        <label for="lname">Last Name:</label>
+        <input type="text" name="lname" id="">
+        <label for="occ">Occupation:</label>
+        <input type="text" name="occ" id="">
+        <input type="submit" value="Add Friend">
+
+    </form>
+    <br>
+    <hr>
+
+
+    <h1 class="sql">Hello Flask connection to MySQL </h1>
+
+    <table>
+        <tr>
+            <th class="id">id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Occupation</th>
+            <th>Created_At</th>
+            <th>Updated_At</th>
+            <th>Manipulate Data</th>
+        </tr>
+
+        {% for friend in friends %}
+        <tr>
+            <td><p>{{friend.id}}</p></td>
+            <td><p>{{friend.first_name}}</p></td>
+            <td><p>{{friend.last_name}}</p></td>
+            <td><p>{{friend.occupation}}</p></td>
+            <td><p>{{friend.created_at}}</p></td>
+            <td><p>{{friend.updated_at}}</p></td>
+            <td><span><a href="/friends/{{friend.id}}/show">Show </a>|</span><a href="/friends/{{friend.id}}/edit">EDIT</a> |<span> <a href="/friend/{{friend.id}}/delete">DELETE</a></span></td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+
+</body>
+
+
+</html>

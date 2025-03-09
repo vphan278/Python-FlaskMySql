@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 class="text-center">Here are our divers!</h1>
+        <p><a href="/dashboard">Home</a></p>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Created At</th>
+                    <th>Manipulate Diver Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for diver in divers.divers %}
+                <tr>
+                    <td>{{ diver.first_name }}</td>
+                    <td>{{ diver.last_name }}</td>
+                    <td>{{ diver.email }}</td>
+                    <td>{{ diver.created_at }}</td>
+                    <td><a href="/diver/{{diver.id}}/edit">EDIT</a> <a href="/diver/{{diver.id}}/delete">DELETE</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>

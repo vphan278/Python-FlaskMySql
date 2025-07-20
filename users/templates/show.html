@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table{
+            width:500px;
+    
+        }
+
+        caption,th{
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        table, th, td{
+            border:1px solid black;
+            border-collapse: collapse;
+            padding:10px ;
+    
+        }
+
+        th{
+            background-color: lightblue;
+            width: 170px;
+        }
+        td p{
+            width: 170px;
+        }
+        tr:nth-child(even){
+            background-color: white;
+        }
+        tr:nth-child(odd){
+            background-color: #ddd;
+        }
+        
+        .id {
+            background-color: aqua;
+            width: 20px;
+    
+        }
+        
+        form{
+            margin: 20px auto;
+            width: 340px;
+        }
+        input{
+            padding: 5px;
+            font-size: inherit;
+        }
+        input[type="text"]{
+            display: block;
+            margin-bottom: 20px;
+            width: 340px;
+        }
+        .h1{
+            text-align: center;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    
+    <h1>Hello Users connection to MySQL Database</h1>
+
+
+        <table>
+    
+            <tr>
+        
+                <th class="id">id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Created_At</th>
+                <th>Updated_At</th>
+                <th>Manipulate Data</th>
+            </tr>
+            
+
+            {% for one_user in users %}
+            
+                
+                <tr>
+                    <td><p>{{one_user.id}}</p></td>
+                    <td><p>{{one_user.first_name}}</p></td>
+                    <td><p>{{one_user.last_name}}</p></td>
+                    <td><p>{{one_user.email}}</p></td>
+                    <td><p>{{one_user.created_at}}</p></td>
+                    <td><p>{{one_user.updated_at}}</p></td>
+                    <td><a href="/friends/{{one_user.id}}/edit">EDIT</a> <span><a href="/friends/{{one_user.id}}/delete">DELETE</a></span></td>
+                </tr>
+                
+            
+            {% endfor %}
+        </table>
+        <br>
+
+        <a href="/" class="btn btn-primary"> Add User/ Back to Home page</a>
+
+</body>
+</html>
